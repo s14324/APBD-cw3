@@ -8,8 +8,6 @@ namespace Cw3.DAL
 {
     public class MockDbService : IDbService
     {
-        private static IEnumerable<Student> _students;
-
         public IEnumerable<Student> GetStudents()
         {
             return null;

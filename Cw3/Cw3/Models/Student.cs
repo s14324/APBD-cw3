@@ -12,5 +12,6 @@ namespace Cw3.Models
         public string LastName { get; set; }
         public string BirthDate { get; set; }
         public string IdEnrollment { get; set; }
+
     }
 }

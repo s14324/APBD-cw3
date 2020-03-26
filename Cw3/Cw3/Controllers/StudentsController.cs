@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 using Cw3.DAL;
 using Cw3.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +13,6 @@ namespace Cw3.Controllers
         private IDbService _dbService;
 
         private const string ConString = "Data Source=db-mssql;Initial Catalog=s14324;Integrated Security=True";
-
 
         public StudentsController(IDbService dbService)
         {
@@ -70,6 +66,7 @@ namespace Cw3.Controllers
                 }
             }
             return NotFound();
+
         }
     }
 }
