@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Cw3.DAL
+namespace Cw3.Services
 {
     public interface IDbService
     {
         public IEnumerable<Student> GetStudents();
+
+        Student GetStudent(string index);
     }
 }

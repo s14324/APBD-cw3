@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using Cw3.DAL;
 using Cw3.Models;
+using Cw3.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cw3.Controllers
 {
     [ApiController]
     [Route("api/students")]
-    public class StudentsController : ControllerBase
+    public class StudentsController : ControllerBase //cw4 - outdated ----------------------------------
     {
         private IDbService _dbService;
 
         private const string ConString = "Data Source=db-mssql;Initial Catalog=s14324;Integrated Security=True";
+
 
         public StudentsController(IDbService dbService)
         {
@@ -22,7 +23,7 @@ namespace Cw3.Controllers
         [HttpGet]
         public IActionResult GetStudents([FromServices] IDbService dbService)
         {
-            var list = new List<Student>();
+            List<Student> list = new List<Student>();
 
             using (SqlConnection con = new SqlConnection(ConString))
             using (SqlCommand com = new SqlCommand())
@@ -66,7 +67,6 @@ namespace Cw3.Controllers
                 }
             }
             return NotFound();
-
         }
     }
 }
